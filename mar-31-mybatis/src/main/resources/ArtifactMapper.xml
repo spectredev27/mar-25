@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mainpackage.ArtifactMapper">
+    <select id="selectAll" resultType="mainpackage.Artifact">
+        SELECT * FROM artifact
+    </select>
+
+    <insert id="insert" parameterType="mainpackage.Artifact" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO artifact (groupname, artifactname) VALUES (#{groupName}, #{artifactName})
+    </insert>
+</mapper>
